@@ -11,6 +11,9 @@ import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
 import com.prolificinteractive.materialcalendarview.OnMonthChangedListener;
 import com.prolificinteractive.materialcalendarview.sample.R;
+import com.prolificinteractive.materialcalendarview.sample.decorators.HighlightWeekendsDecorator;
+import com.prolificinteractive.materialcalendarview.sample.decorators.MySelectorDecorator;
+import com.prolificinteractive.materialcalendarview.sample.decorators.OneDayDecorator;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -47,6 +50,14 @@ public class FK1CalendarActivity extends AppCompatActivity implements OnDateSele
 
         //Setup initial text
         textView.setText(getSelectedDatesString());
+
+        widget.addDecorators(
+                new HighlightWeekendsDecorator(),
+                new OneDayDecorator());
+
+        widget.state().edit()
+                .setMinimumDate(CalendarDay.today())
+                .commit();
     }
 
     @Override

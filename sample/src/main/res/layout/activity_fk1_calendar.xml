@@ -20,6 +20,7 @@
         app:mcv_arrowColor="@android:color/transparent"
         app:mcv_weekDayTextAppearance="@style/FileKeepersEditText"
         app:mcv_calendarMode="biweekly"
+        app:mcv_selectionColor="#06a7e2"
         />
 
     <TextView
