@@ -19,7 +19,7 @@ class MonthView extends CalendarPagerView {
 
     @Override
     protected void buildDayViews(Collection<DayView> dayViews, Calendar calendar) {
-        for (int r = 0; r < DEFAULT_BIWEEKLY_MAX_WEEKS; r++) {
+        for (int r = 0; r < DEFAULT_MAX_WEEKS; r++) {
             for (int i = 0; i < DEFAULT_DAYS_IN_WEEK; i++) {
                 addDayView(dayViews, calendar);
             }
@@ -37,6 +37,6 @@ class MonthView extends CalendarPagerView {
 
     @Override
     protected int getRows() {
-        return DEFAULT_BIWEEKLY_MAX_WEEKS + DAY_NAMES_ROW;
+        return DEFAULT_MAX_WEEKS + DAY_NAMES_ROW;
     }
 }
