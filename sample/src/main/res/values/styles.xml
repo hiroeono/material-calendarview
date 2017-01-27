@@ -13,4 +13,9 @@
         <item name="android:textColor">@color/mcv_text_date_light</item>
     </style>
 
+    <style name="FileKeepersEditText">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#06a7e2</item>
+    </style>
+
 </resources>

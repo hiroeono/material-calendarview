@@ -16,7 +16,7 @@
     <string name="title_activity_basic_modes">Calendar with Dynamic Modes</string>
     <string name="title_activity_multiple_view">Multiple Basic Calendars</string>
     <string name="title_activity_multiple_size">Many-Sized Calendars</string>
-
+    <string name="title_activity_fk1_calendar">FK1 Calendar</string>
     <string-array name="custom_weekdays">
         <item>Su</item>
         <item>M</item>
@@ -25,6 +25,16 @@
         <item>Th</item>
         <item>F</item>
         <item>Sa</item>
+    </string-array>
+
+    <string-array name="fk1_weekdays">
+        <item>S</item>
+        <item>M</item>
+        <item>T</item>
+        <item>W</item>
+        <item>T</item>
+        <item>F</item>
+        <item>S</item>
     </string-array>
 
     <string-array name="custom_months">

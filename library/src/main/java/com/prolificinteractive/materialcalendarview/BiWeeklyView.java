@@ -7,36 +7,36 @@ import java.util.Calendar;
 import java.util.Collection;
 
 /**
- * Display a month of {@linkplain DayView}s and
+ * Display a week of {@linkplain DayView}s and
  * seven {@linkplain WeekDayView}s.
  */
+@Experimental
 @SuppressLint("ViewConstructor")
-class MonthView extends CalendarPagerView {
+public class BiWeeklyView extends CalendarPagerView {
 
-    public MonthView(@NonNull MaterialCalendarView view, CalendarDay month, int firstDayOfWeek) {
-        super(view, month, firstDayOfWeek);
+    public BiWeeklyView(@NonNull MaterialCalendarView view,
+                    CalendarDay firstViewDay,
+                    int firstDayOfWeek) {
+        super(view, firstViewDay, firstDayOfWeek);
     }
 
     @Override
     protected void buildDayViews(Collection<DayView> dayViews, Calendar calendar) {
-        for (int r = 0; r < DEFAULT_BIWEEKLY_MAX_WEEKS; r++) {
+        for(int r = 0; r < DEFAULT_BIWEEKLY_MAX_WEEKS; r++) {
             for (int i = 0; i < DEFAULT_DAYS_IN_WEEK; i++) {
                 addDayView(dayViews, calendar);
             }
         }
-    }
 
-    public CalendarDay getMonth() {
-        return getFirstViewDay();
     }
 
     @Override
     protected boolean isDayEnabled(CalendarDay day) {
-        return day.getMonth() == getFirstViewDay().getMonth();
+        return true;
     }
 
     @Override
     protected int getRows() {
-        return DEFAULT_BIWEEKLY_MAX_WEEKS + DAY_NAMES_ROW;
+        return DAY_NAMES_ROW + DEFAULT_BIWEEKLY_MAX_WEEKS;
     }
 }

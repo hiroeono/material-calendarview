@@ -166,6 +166,7 @@ public class MaterialCalendarView extends ViewGroup {
     public static final int DEFAULT_TILE_SIZE_DP = 44;
     private static final int DEFAULT_DAYS_IN_WEEK = 7;
     private static final int DEFAULT_MAX_WEEKS = 6;
+    private static final int DEFAULT_BIWEEKLY_MAX_WEEKS = 2;
     private static final int DAY_NAMES_ROW = 1;
 
     private static final TitleFormatter DEFAULT_TITLE_FORMATTER = new DateFormatTitleFormatter();
@@ -1179,7 +1180,7 @@ public class MaterialCalendarView extends ViewGroup {
             out.writeInt(topbarVisible ? 1 : 0);
             out.writeInt(selectionMode);
             out.writeInt(dynamicHeightEnabled ? 1 : 0);
-            out.writeInt(calendarMode == CalendarMode.WEEKS ? 1 : 0);
+            out.writeInt(calendarMode == CalendarMode.BIWEEKLY ? 2 : calendarMode == CalendarMode.WEEKS ? 1 : 0);
             out.writeParcelable(currentMonth, 0);
         }
 
@@ -1212,7 +1213,7 @@ public class MaterialCalendarView extends ViewGroup {
             topbarVisible = in.readInt() == 1;
             selectionMode = in.readInt();
             dynamicHeightEnabled = in.readInt() == 1;
-            calendarMode = in.readInt() == 1 ? CalendarMode.WEEKS : CalendarMode.MONTHS;
+            calendarMode = in.readInt() ==  2 ? CalendarMode.BIWEEKLY : in.readInt() == 1 ? CalendarMode.WEEKS : CalendarMode.MONTHS;
             currentMonth = in.readParcelable(loader);
         }
     }
@@ -1924,6 +1925,9 @@ public class MaterialCalendarView extends ViewGroup {
                 break;
             case WEEKS:
                 newAdapter = new WeekPagerAdapter(this);
+                break;
+            case BIWEEKLY:
+                newAdapter = new BiWeeklyPagerAdapter(this);
                 break;
             default:
                 throw new IllegalArgumentException("Provided display mode which is not yet implemented");

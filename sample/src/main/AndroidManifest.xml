@@ -40,6 +40,24 @@
         </activity>
 
         <activity
+            android:name="com.prolificinteractive.materialcalendarview.sample.FK1CalendarActivity"
+            android:label="@string/title_activity_fk1_calendar"
+            android:parentActivityName="com.prolificinteractive.materialcalendarview.sample.MainActivity"
+            >
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.prolificinteractive.materialcalendarview.sample.MainActivity"
+                />
+
+            <intent-filter>
+                <action android:name="android.intent.action.RUN" />
+                <category android:name="com.prolificinteractive.materialcalendarview.sample.SAMPLE" />
+            </intent-filter>
+
+        </activity>
+
+        <activity
             android:name="com.prolificinteractive.materialcalendarview.sample.BasicActivity"
             android:label="@string/title_activity_basic"
             android:parentActivityName="com.prolificinteractive.materialcalendarview.sample.MainActivity"

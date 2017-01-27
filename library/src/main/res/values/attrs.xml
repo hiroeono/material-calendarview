@@ -52,6 +52,7 @@
         <attr name="mcv_calendarMode" format="enum">
             <enum name="month" value="0" />
             <enum name="week" value="1" />
+            <enum name="biweekly" value="2"/>
         </attr>
 
         <attr name="mcv_titleAnimationOrientation" format="enum">

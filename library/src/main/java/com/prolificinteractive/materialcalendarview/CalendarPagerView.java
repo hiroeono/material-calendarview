@@ -25,6 +25,7 @@ abstract class CalendarPagerView extends ViewGroup implements View.OnClickListen
 
     protected static final int DEFAULT_DAYS_IN_WEEK = 7;
     protected static final int DEFAULT_MAX_WEEKS = 6;
+    protected static final int DEFAULT_BIWEEKLY_MAX_WEEKS = 2;
     protected static final int DAY_NAMES_ROW = 1;
     private static final Calendar tempWorkingCalendar = CalendarUtils.getInstance();
     private final ArrayList<WeekDayView> weekDayViews = new ArrayList<>();
